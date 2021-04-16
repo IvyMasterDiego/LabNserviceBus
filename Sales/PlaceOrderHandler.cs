@@ -16,8 +16,6 @@ namespace Sales
         {
             log.Info($"Received PlaceOrder, OrderId = {message.OrderId}, Date = {message.date} ");
 
-            // This is normally where some business logic would occur
-
             var orderPlaced = new OrderPlaced
             {
                 OrderId = message.OrderId

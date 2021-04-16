@@ -5,8 +5,8 @@ using NServiceBus.Logging;
 
 namespace Shipping
 {
-    public class OrderBilledHandler :
-        IHandleMessages<OrderBilled>
+    public class OrderBilledHandler : IHandleMessages<OrderBilled>
+
     {
         static ILog log = LogManager.GetLogger<OrderBilledHandler>();
 

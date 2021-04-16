@@ -42,14 +42,14 @@ namespace ClientUI
                 switch (key.Key)
                 {
                     case ConsoleKey.P:
-                        // Instantiate the command
+                    
                         var command = new PlaceOrder
                         {
                             OrderId = Guid.NewGuid().ToString(),
                             date = DateTime.Now
                         };
 
-                        // Send the command
+                      
                         log.Info($"Sending PlaceOrder command, OrderId = {command.OrderId}, {command.date}");
                         await endpointInstance.Send(command)
                             .ConfigureAwait(false);
