@@ -13,7 +13,7 @@ namespace Billing
             var endpointConfiguration = new EndpointConfiguration("Billing");
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
-
+            endpointConfiguration.LicensePath(@"D:\INTEC\Programacion 3\License.xml");
             var endpointInstance = await Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false);
 

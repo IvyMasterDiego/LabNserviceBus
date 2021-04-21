@@ -12,7 +12,7 @@ namespace Billing
 
         public Task Handle(OrderPlaced message, IMessageHandlerContext context)
         {
-            log.Info($"Received OrderPlaced, OrderId = {message.OrderId}, Date = {message.date} - Charging credit card...");
+            log.Info($"Received OrderPlaced, OrderId = {message.OrderId}, Date = {message.FechaIngreso} - Charging credit card...");
 
             var orderBilled = new OrderBilled
             {

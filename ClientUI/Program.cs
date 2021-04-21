@@ -15,7 +15,7 @@ namespace ClientUI
             var endpointConfiguration = new EndpointConfiguration("ClientUI");
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
-
+            endpointConfiguration.LicensePath(@"D:\INTEC\Programacion 3\License.xml");
             var routing = transport.Routing();
             routing.RouteToEndpoint(typeof(PlaceOrder), "Sales");
 
@@ -42,15 +42,19 @@ namespace ClientUI
                 switch (key.Key)
                 {
                     case ConsoleKey.P:
-                    
+
                         var command = new PlaceOrder
                         {
                             OrderId = Guid.NewGuid().ToString(),
-                            date = DateTime.Now
+                            FechaIngreso = DateTime.Now,
+                            Amount = Guid.NewGuid().ToString(),
+                            CustomerID =Guid.NewGuid().ToString(),
+                            CustomerName = Guid.NewGuid().ToString(),
+                            Description = Guid.NewGuid().ToString()
                         };
 
-                      
-                        log.Info($"Sending PlaceOrder command, OrderId = {command.OrderId}, {command.date}");
+
+                        log.Info($"Sending PlaceOrder command, OrderId = {command.OrderId}, {command.FechaIngreso}, {command.Description}, {command.Amount}, {command.CustomerID}, {command.CustomerName}");
                         await endpointInstance.Send(command)
                             .ConfigureAwait(false);
 

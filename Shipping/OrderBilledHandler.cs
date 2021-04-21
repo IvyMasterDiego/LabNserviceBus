@@ -12,7 +12,7 @@ namespace Shipping
 
         public Task Handle(OrderBilled message, IMessageHandlerContext context)
         {
-            log.Info($"Received OrderBilled, OrderId = {message.OrderId}, Date = {message.date} - Should we ship now?");
+            log.Info($"Received OrderBilled, OrderId = {message.OrderId}, Date = {message.FechaIngreso} - Should we ship now?");
             return Task.CompletedTask;
         }
     }

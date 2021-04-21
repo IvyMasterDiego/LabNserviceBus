@@ -8,7 +8,17 @@ namespace Messages
     public class OrderPlaced : IEvent
     {
         public string OrderId { get; set; }
-        public DateTime date = DateTime.Now;
+
+
+        public DateTime FechaIngreso = DateTime.Now;
+
+        public string Description { get; set; }
+
+        public string CustomerID { get; set; }
+
+        public string CustomerName{get;set;}
+
+        public string Amount { get; set; }
     }
 
     #endregion
